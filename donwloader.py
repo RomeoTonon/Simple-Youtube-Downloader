@@ -8,20 +8,20 @@ def play_video():
         yt = YouTube(video_url)
         stream = yt.streams.get_highest_resolution()
         stream.download()
-        messagebox.showinfo("Téléchargement Terminé", "La vidéo a été téléchargée.")
+        messagebox.showinfo("Download Completed", "Vidéo Downloaded")
     except Exception as e:
-        messagebox.showerror("Erreur", "Une erreur est survenue : " + str(e))
+        messagebox.showerror("Error", "An Error has happened : " + str(e))
 
 app = tk.Tk()
-app.title("Lecteur de Vidéo YouTube")
+app.title("Youtube Downloader")
 
-label = tk.Label(app, text="URL de la vidéo YouTube:")
+label = tk.Label(app, text="Youtube URL")
 label.pack(pady=10)
 
 entry = tk.Entry(app)
 entry.pack(pady=5)
 
-button = tk.Button(app, text="Lire la Vidéo", command=play_video)
+button = tk.Button(app, text="Download", command=play_video)
 button.pack(pady=10)
 
 app.mainloop()
